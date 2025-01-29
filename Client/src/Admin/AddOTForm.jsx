@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const AddOTForm = () => {
   const [otName, setOtName] = useState("");
@@ -9,6 +11,7 @@ const AddOTForm = () => {
   const [surgeon, setSurgeonId] = useState("");
   const [staffName, setStaffName] = useState("");
   const [staffIds, setStaffIds] = useState("");
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,6 +37,7 @@ const AddOTForm = () => {
       );
       if (response.data.success) {
         alert(response.data.message);
+        navigate('/add-ot-form')
       }
     } catch (error) {
       console.error("Failed to add OT:", error.message);
