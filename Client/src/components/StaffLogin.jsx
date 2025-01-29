@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"; // For making API requests
-import { useNavigate } from "react-router-dom"; // For navigation
+import { useNavigate ,Link} from "react-router-dom"; // For navigation
 
 const StaffLoginForm = () => {
   const [email, setEmail] = useState("");
@@ -86,6 +86,12 @@ const StaffLoginForm = () => {
           >
             Login
           </button>
+          <p className="mt-4 text-sm text-gray-600 text-center">
+          Don't have an account? 
+          <Link to="/register" className="text-blue-500 hover:underline ml-1">
+            Register here
+          </Link>
+        </p>
         </form>
       </div>
     </div>
