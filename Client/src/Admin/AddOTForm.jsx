@@ -37,7 +37,7 @@ const AddOTForm = () => {
       );
       if (response.data.success) {
         alert(response.data.message);
-        navigate('/add-ot-form')
+             navigate('/manage-ots')
       }
     } catch (error) {
       console.error("Failed to add OT:", error.message);
